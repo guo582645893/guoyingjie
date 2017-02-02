@@ -19,7 +19,7 @@ public class Main {
 	}
 	
 	public void  chickYear() throws UnsupportedEncodingException{
-		System.out.println(new String("鸡年大吉".getBytes(),"utf-8"));
+		System.out.println(new String("这个不是鸡年大吉".getBytes(),"utf-8"));
 	}
 	
 	
