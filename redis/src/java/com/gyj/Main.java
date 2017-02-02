@@ -18,7 +18,7 @@ public class Main {
 		System.out.println("这个是刚刚加入的啊");
 	}
 	
-	public void chickYear() throws UnsupportedEncodingException{
+	public void  chickYear() throws UnsupportedEncodingException{
 		System.out.println(new String("鸡年大吉".getBytes(),"utf-8"));
 	}
 	
