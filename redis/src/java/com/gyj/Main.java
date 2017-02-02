@@ -12,4 +12,10 @@ public class Main {
 	 
 		
 	}
+	
+	public void nowtest(){
+		System.out.println("这个是刚刚加入的啊");
+	}
+	
+	
 }
