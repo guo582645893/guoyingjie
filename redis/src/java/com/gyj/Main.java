@@ -23,7 +23,10 @@ public class Main {
 		
 		System.out.println("这个是刚刚加入的啊。");
 	}
-	
+	public void systemGetUser(){
+		System.out.println("刚才是试一下，这个才是提交的东西。")
+		
+	}
 	
 	
 }
