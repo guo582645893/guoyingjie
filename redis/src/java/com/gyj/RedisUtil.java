@@ -14,6 +14,9 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+/**
+  redis 操作类
+*/
 public class RedisUtil {  
     private static final Logger LOGGER = Logger.getLogger(RedisUtil.class);  
     private static JedisPool pool = null;  
