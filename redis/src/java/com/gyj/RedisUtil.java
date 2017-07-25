@@ -61,7 +61,6 @@ public class RedisUtil {
         }  
         return value;  
     }  
-  
     /** 
      * <p>向redis存入key和value,并释放连接资源</p> 
      * <p>如果key已经存在 则覆盖</p> 
