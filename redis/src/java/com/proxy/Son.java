@@ -2,8 +2,8 @@ package com.proxy;
 
 public class Son extends Dad{
 
-	public int getName(){
-		return 2;
+	public String getName(){
+		return "2";
 	}
 	
 	
