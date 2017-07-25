@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import net.sf.json.JSONObject;
-
 import org.apache.log4j.Logger;
 
 import redis.clients.jedis.BinaryClient.LIST_POSITION;
@@ -17,6 +15,7 @@ import redis.clients.jedis.JedisPoolConfig;
 /**
   redis 操作类
 */
+@SuppressWarnings("all")
 public class RedisUtil {  
     private static final Logger LOGGER = Logger.getLogger(RedisUtil.class);  
     private static JedisPool pool = null;  
