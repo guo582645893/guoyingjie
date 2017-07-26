@@ -4,14 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-<<<<<<< HEAD
 import net.sf.json.JSONObject;
-
-=======
->>>>>>> origin/yingjie
 import org.apache.log4j.Logger;
-
 import redis.clients.jedis.BinaryClient.LIST_POSITION;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -20,10 +14,7 @@ import redis.clients.jedis.JedisPoolConfig;
 /**
   redis 操作类
 */
-<<<<<<< HEAD
-=======
 @SuppressWarnings("all")
->>>>>>> origin/yingjie
 public class RedisUtil {  
     private static final Logger LOGGER = Logger.getLogger(RedisUtil.class);  
     private static JedisPool pool = null;  
@@ -32,11 +23,7 @@ public class RedisUtil {
      
     private RedisUtil() {  
         if (pool == null) {  
-<<<<<<< HEAD
-            String ip = "localhost";  
-=======
             String ip = "127.0.0.1";  
->>>>>>> origin/yingjie
             int port =6379;
             JedisPoolConfig config = new JedisPoolConfig();  
             // 控制一个pool可分配多少个jedis实例，通过pool.getResource()来获取；  
@@ -72,10 +59,6 @@ public class RedisUtil {
         }  
         return value;  
     }  
-<<<<<<< HEAD
-  
-=======
->>>>>>> origin/yingjie
     /** 
      * <p>向redis存入key和value,并释放连接资源</p> 
      * <p>如果key已经存在 则覆盖</p> 
