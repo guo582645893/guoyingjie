@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pay.dao.WxProblemFeedBackMapper">
+	<resultMap id="BaseResultMap" type="com.pay.model.WxProblemFeedBack">
+		<id column="ID" jdbcType="BIGINT" property="id" />
+		<result column="OPTIMISTIC" jdbcType="INTEGER" property="optimistic" />
+		<result column="CUSTOMER_NO" jdbcType="VARCHAR" property="customerNo" />
+		<result column="OPENID" jdbcType="VARCHAR" property="openid" />
+		<result column="FEEDBACK_TYPE" jdbcType="VARCHAR" property="feedbackType" />
+		<result column="BUSINESS_TYPE" jdbcType="VARCHAR" property="businessType" />
+		<result column="FEEDBACK_IMG" jdbcType="VARCHAR" property="feedbackImg" />
+		<result column="FEEDBACK_TEXT" jdbcType="VARCHAR" property="feedbackText" />
+		<result column="FEEDBACK_SOURCE" jdbcType="INTEGER" property="feedbackSource" />
+		<result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+		<result column="REMARK" jdbcType="VARCHAR" property="remark" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		ID, OPTIMISTIC, CUSTOMER_NO, OPENID, FEEDBACK_TYPE, BUSINESS_TYPE,
+		FEEDBACK_IMG,
+		FEEDBACK_TEXT, FEEDBACK_SOURCE, CREATE_TIME, REMARK
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from wx_problem_feedback
+		where ID = #{id,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteByPrimaryKey">
+		delete from wx_problem_feedback
+		where ID = #{id,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert" parameterType="com.pay.model.WxProblemFeedBack">
+		insert into wx_problem_feedback (ID, OPTIMISTIC, CUSTOMER_NO,
+		OPENID, FEEDBACK_TYPE, BUSINESS_TYPE,
+		FEEDBACK_IMG, FEEDBACK_TEXT, FEEDBACK_SOURCE,
+		CREATE_TIME, REMARK)
+		values (#{id,jdbcType=BIGINT}, #{optimistic,jdbcType=INTEGER},
+		#{customerNo,jdbcType=VARCHAR},
+		#{openid,jdbcType=VARCHAR}, #{feedbackType,jdbcType=VARCHAR}, #{businessType,jdbcType=VARCHAR},
+		#{feedbackImg,jdbcType=VARCHAR}, #{feedbackText,jdbcType=VARCHAR},
+		#{feedbackSource,jdbcType=INTEGER},
+		#{createTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.pay.model.WxProblemFeedBack">
+		insert into wx_problem_feedback
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				ID,
+			</if>
+			<if test="optimistic != null">
+				OPTIMISTIC,
+			</if>
+			<if test="customerNo != null">
+				CUSTOMER_NO,
+			</if>
+			<if test="openid != null">
+				OPENID,
+			</if>
+			<if test="feedbackType != null">
+				FEEDBACK_TYPE,
+			</if>
+			<if test="businessType != null">
+				BUSINESS_TYPE,
+			</if>
+			<if test="feedbackImg != null">
+				FEEDBACK_IMG,
+			</if>
+			<if test="feedbackText != null">
+				FEEDBACK_TEXT,
+			</if>
+			<if test="feedbackSource != null">
+				FEEDBACK_SOURCE,
+			</if>
+			<if test="createTime != null">
+				CREATE_TIME,
+			</if>
+			<if test="remark != null">
+				REMARK,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=BIGINT},
+			</if>
+			<if test="optimistic != null">
+				#{optimistic,jdbcType=INTEGER},
+			</if>
+			<if test="customerNo != null">
+				#{customerNo,jdbcType=VARCHAR},
+			</if>
+			<if test="openid != null">
+				#{openid,jdbcType=VARCHAR},
+			</if>
+			<if test="feedbackType != null">
+				#{feedbackType,jdbcType=VARCHAR},
+			</if>
+			<if test="businessType != null">
+				#{businessType,jdbcType=VARCHAR},
+			</if>
+			<if test="feedbackImg != null">
+				#{feedbackImg,jdbcType=VARCHAR},
+			</if>
+			<if test="feedbackText != null">
+				#{feedbackText,jdbcType=VARCHAR},
+			</if>
+			<if test="feedbackSource != null">
+				#{feedbackSource,jdbcType=INTEGER},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.pay.model.WxProblemFeedBack">
+		update wx_problem_feedback
+		<set>
+			<if test="optimistic != null">
+				OPTIMISTIC = #{optimistic,jdbcType=INTEGER},
+			</if>
+			<if test="customerNo != null">
+				CUSTOMER_NO = #{customerNo,jdbcType=VARCHAR},
+			</if>
+			<if test="openid != null">
+				OPENID = #{openid,jdbcType=VARCHAR},
+			</if>
+			<if test="feedbackType != null">
+				FEEDBACK_TYPE = #{feedbackType,jdbcType=VARCHAR},
+			</if>
+			<if test="businessType != null">
+				BUSINESS_TYPE = #{businessType,jdbcType=VARCHAR},
+			</if>
+			<if test="feedbackImg != null">
+				FEEDBACK_IMG = #{feedbackImg,jdbcType=VARCHAR},
+			</if>
+			<if test="feedbackText != null">
+				FEEDBACK_TEXT = #{feedbackText,jdbcType=VARCHAR},
+			</if>
+			<if test="feedbackSource != null">
+				FEEDBACK_SOURCE = #{feedbackSource,jdbcType=INTEGER},
+			</if>
+			<if test="createTime != null">
+				CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="remark != null">
+				REMARK = #{remark,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.pay.model.WxProblemFeedBack">
+		update wx_problem_feedback
+		set OPTIMISTIC = #{optimistic,jdbcType=INTEGER},
+		CUSTOMER_NO = #{customerNo,jdbcType=VARCHAR},
+		OPENID = #{openid,jdbcType=VARCHAR},
+		FEEDBACK_TYPE = #{feedbackType,jdbcType=VARCHAR},
+		BUSINESS_TYPE = #{businessType,jdbcType=VARCHAR},
+		FEEDBACK_IMG = #{feedbackImg,jdbcType=VARCHAR},
+		FEEDBACK_TEXT = #{feedbackText,jdbcType=VARCHAR},
+		FEEDBACK_SOURCE = #{feedbackSource,jdbcType=INTEGER},
+		CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+		REMARK = #{remark,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=BIGINT}
+	</update>
+</mapper>
