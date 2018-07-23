@@ -112,4 +112,21 @@ public class WxProblemFeedBack {
     public void setRemark(String remark) {
         this.remark = remark == null ? null : remark.trim();
     }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "WxProblemFeedBack{" +
+                "id=" + id +
+                ", optimistic=" + optimistic +
+                ", customerNo='" + customerNo + '\'' +
+                ", openid='" + openid + '\'' +
+                ", feedbackType='" + feedbackType + '\'' +
+                ", businessType='" + businessType + '\'' +
+                ", feedbackImg='" + feedbackImg + '\'' +
+                ", feedbackText='" + feedbackText + '\'' +
+                ", feedbackSource=" + feedbackSource +
+                ", createTime=" + createTime +
+                ", remark='" + remark + '\'' +
+                '}';
+    }
 }
